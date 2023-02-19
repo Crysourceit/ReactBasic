@@ -2,6 +2,7 @@ import React from "react"
 import Giftme from "./Giftme"
 import { v4 as uuidv4 } from "uuid"
 import { BrowserRouter } from "react-router-dom"
+import './Transaction.css'
 
 function Transaction() {
   const data = [
@@ -17,7 +18,7 @@ function Transaction() {
   ]
 
   return (
-    <div className="pt-3">
+    <div className="item-list">
       {data.map((Element) => {
         // long Hand
         // return <Giftme title={Element.title} amount={Element.amout} key={uuidv4()} />
