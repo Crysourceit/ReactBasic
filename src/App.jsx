@@ -5,7 +5,24 @@ import Transaction from './components/Transaction'
 import FormComponents from './components/FormComponents'
 
 function App() {
+  //btn count
   const [count, setCount] = useState(0)
+
+  const initData = [
+    { id: 1, title: 'Price', amount: 2000 },
+    { id: 2, title: 'Salary', amount: 25000 },
+    { id: 3, title: 'Travel', amount: 1000 },
+    { id: 4, title: 'Insurance', amount: 4000 },
+  ]
+
+  // useState for array initData ** use [] for init good
+  const [items, setItem] = useState(initData)
+  // get Data from formComps
+  const onAddNewItem = (newItem) => {
+    setItem((prevItem) => {
+      return [newItem, ...prevItem]
+    })
+  }
 
   return (
     <div>
@@ -17,6 +34,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <div className='bttn'>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -24,8 +42,9 @@ function App() {
       </div>
 
       <h1>Vite + React For First Time</h1>
-      <FormComponents />
-      <Transaction />
+
+      <FormComponents onAddItem={onAddNewItem} />
+      <Transaction items={items} />
     </div>
   )
 }

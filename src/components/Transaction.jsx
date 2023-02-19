@@ -1,31 +1,32 @@
 import React from "react"
 import Giftme from "./Giftme"
-import { v4 as uuidv4 } from "uuid"
 import { BrowserRouter } from "react-router-dom"
 import './Transaction.css'
+import { element } from "prop-types"
 
-function Transaction() {
-  const data = [
-    { title: 'Price', amount: 2000 },
-    { title: 'Salary', amount: 25000 },
-    { title: 'Travel', amount: 1000 },
-    { title: 'Insurance', amount: 4000 },
+function Transaction(props) {
+  const { items } = props
+  // const data = [
+  //   { title: 'Price', amount: 2000 },
+  //   { title: 'Salary', amount: 25000 },
+  //   { title: 'Travel', amount: 1000 },
+  //   { title: 'Insurance', amount: 4000 },
 
-    // { id: 1, title: 'Price', amount: '2000' },
-    // { id: 2, title: 'Salary', amount: '25000' },
-    // { id: 3, title: 'Travel', amount: '1000' },
-    // { id: 4, title: 'Insurance', amount: '4000' },
-  ]
+  //   // { id: 1, title: 'Price', amount: '2000' },
+  //   // { id: 2, title: 'Salary', amount: '25000' },
+  //   // { id: 3, title: 'Travel', amount: '1000' },
+  //   // { id: 4, title: 'Insurance', amount: '4000' },
+  // ]
 
   return (
     <div className="item-list">
-      {data.map((Element) => {
+      {items.map((element) => {
         // long Hand
-        // return <Giftme title={Element.title} amount={Element.amout} key={uuidv4()} />
+        // return <Giftme title={element.title} amount={element.amout} key={uuidv4()} />
         // short Hand (Spread)
-        return <Giftme {...Element} key={uuidv4()} />
+        return <Giftme {...element} key={element.id} />
         // no uuid
-        // return <Giftme {...Element} key = {Element.id} />
+        // return <Giftme {...element} key = {element.id} />
       })}
 
       {/* <Giftme title={data[0].title} amount={data[0].amount} />
