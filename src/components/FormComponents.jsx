@@ -33,7 +33,7 @@ const FormComponents = (props) => {
                 </div>
                 <div className="form-control">
                     <label>Money</label>
-                    <input type="number" placeholder="(+ incom, - outcome)" onChange={inputAmount} value={amount} />
+                    <input type="number" placeholder="(+ income, - outcome)" onChange={inputAmount} value={amount} />
                 </div>
                 <div>
                     <button type="submit" className="btn">Add Data</button>

@@ -32,9 +32,9 @@ function Transaction(props) {
       {/* <Giftme title={data[0].title} amount={data[0].amount} />
       <Giftme title={data[1].title} amount={data[1].amount} />
       <Giftme title={data[2].title} amount={data[2].amount} />
-      <Giftme title='Price' amout='2000'/>
-      <Giftme title='Salary' amout='25000'/>
-      <Giftme title='Travel' amout='1000'/>  */}
+      <Giftme title='Price' amount='2000'/>
+      <Giftme title='Salary' amount='25000'/>
+      <Giftme title='Travel' amount='1000'/>  */}
     </div>
 
   )
