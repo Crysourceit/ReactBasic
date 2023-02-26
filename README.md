@@ -1,3 +1,3 @@
 # ReactBasic
 
-Learnig React
+Learning React
