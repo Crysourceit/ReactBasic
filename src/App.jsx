@@ -7,16 +7,16 @@ import FormComponents from './components/FormComponents'
 function App() {
   //btn count
   const [count, setCount] = useState(0)
-
-  const initData = [
-    { id: 1, title: 'Price', amount: 2000 },
-    { id: 2, title: 'Salary', amount: 25000 },
-    { id: 3, title: 'Travel', amount: 1000 },
-    { id: 4, title: 'Insurance', amount: 4000 },
-  ]
+  
+  // raw Data
+  //   { id: 1, title: 'Price', amount: 2000 },
+  //   { id: 2, title: 'Salary', amount: 25000 },
+  //   { id: 3, title: 'Travel', amount: 1000 },
+  //   { id: 4, title: 'Insurance', amount: 4000 },
+  // ]
 
   // useState for array initData ** use [] for init good
-  const [items, setItem] = useState(initData)
+  const [items, setItem] = useState([])
   // get Data from formComps
   const onAddNewItem = (newItem) => {
     setItem((prevItem) => {
