@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid"
 
 const FormComponents = (props) => {
     // How to useState
-    console.log("Render FormCompo")
     const [title, setTitle] = useState('')
     const [amount, setAmount] = useState(0)
     const [formValid, setFormValid] = useState(false)
