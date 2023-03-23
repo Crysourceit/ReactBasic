@@ -1,11 +1,11 @@
-import React from "react"
-import Giftme from "./Giftme"
-import { BrowserRouter } from "react-router-dom"
-import './Transaction.css'
-import { element } from "prop-types"
+import React from "react";
+import Giftme from "./Giftme";
+import { BrowserRouter } from "react-router-dom";
+import "./Transaction.css";
+import { element } from "prop-types";
 
 function Transaction(props) {
-  const { items } = props
+  const { items } = props;
   // const data = [
   //   { title: 'Price', amount: 2000 },
   //   { title: 'Salary', amount: 25000 },
@@ -24,7 +24,7 @@ function Transaction(props) {
         // long Hand
         // return <Giftme title={element.title} amount={element.amout} key={uuidv4()} />
         // short Hand (Spread)
-        return <Giftme {...element} key={element.id} />
+        return <Giftme {...element} key={element.id} />;
         // no uuid
         // return <Giftme {...element} key = {element.id} />
       })}
@@ -36,8 +36,7 @@ function Transaction(props) {
       <Giftme title='Salary' amount='25000'/>
       <Giftme title='Travel' amount='1000'/>  */}
     </div>
-
-  )
+  );
 }
 
-export default Transaction
+export default Transaction;
