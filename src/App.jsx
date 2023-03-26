@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Transaction from "./components/Transaction";
 import FormComponents from "./components/FormComponents";
+import DataContext from "./Data/DataContext";
+import ReportComponent from "./components/ReportComponent";
 
 function App() {
   //btn counter
@@ -25,25 +27,32 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="logo">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <DataContext.Provider
+      value={{
+        income: 50000,
+        expense: -8000,
+      }}
+    >
+      <div>
+        <div className="logo">
+          <a href="https://vitejs.dev" target="_blank">
+            <img src="/vite.svg" className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://reactjs.org" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+
+        <div className="bttn">
+          <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        </div>
+
+        <h1>Vite + React For First Time</h1>
+        <ReportComponent />
+        <FormComponents onAddItem={onAddNewItem} />
+        <Transaction items={items} />
       </div>
-
-      <div className="bttn">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-      </div>
-
-      <h1>Vite + React For First Time</h1>
-
-      <FormComponents onAddItem={onAddNewItem} />
-      <Transaction items={items} />
-    </div>
+    </DataContext.Provider>
   );
 }
 
