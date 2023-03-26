@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes, { checkPropTypes } from "prop-types";
 import "./Giftme.css";
 
@@ -7,6 +7,7 @@ const Giftme = (props) => {
   // Giftme style
   const status = amount < 0 ? "expense" : "income";
   const symbol = amount < 0 ? "-" : "+";
+  // const namecony = useContext(DataContext);
 
   return (
     <div>
@@ -17,6 +18,10 @@ const Giftme = (props) => {
           {symbol}
           {Math.abs(amount)}
         </span>
+        {/* useComsumer
+        <DataContext.Consumer>{(value) => <p>{value}</p>}</DataContext.Consumer> */}
+        {/* useContext
+        {namecony} */}
       </li>
     </div>
   );
