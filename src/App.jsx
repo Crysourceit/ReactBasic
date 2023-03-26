@@ -5,7 +5,7 @@ import Transaction from "./components/Transaction";
 import FormComponents from "./components/FormComponents";
 
 function App() {
-  //btn count
+  //btn counter
   const [count, setCount] = useState(0);
 
   // raw Data
