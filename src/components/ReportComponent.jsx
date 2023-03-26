@@ -14,8 +14,8 @@ const ReportComponent = () => {
           </p>
         )}
       </DataContext.Consumer> */}
-      <p>rayrub : {income}</p>
-      <p>rayjai : {expense}</p>
+      <p>rayrubja : {income}</p>
+      <p>rayjaija : {expense}</p>
     </div>
   );
 };
