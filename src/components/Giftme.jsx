@@ -18,7 +18,7 @@ const Giftme = (props) => {
           {symbol}
           {Math.abs(amount)}
         </span>
-        {/* useComsumer
+        {/* useConsumer
         <DataContext.Consumer>{(value) => <p>{value}</p>}</DataContext.Consumer> */}
         {/* useContext
         {namecony} */}

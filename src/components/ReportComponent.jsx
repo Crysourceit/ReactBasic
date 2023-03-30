@@ -5,12 +5,12 @@ const ReportComponent = () => {
   const { income, expense } = useContext(DataContext);
   return (
     <div>
-      {/* useComsumer
+      {/* useConsumer
       <DataContext.Consumer>
         {(context) => (
           <p>
-            useComsumer
-            income: {context.income} expens: {context.expense}
+            useConsumer
+            income: {context.income} expense: {context.expense}
           </p>
         )}
       </DataContext.Consumer> */}

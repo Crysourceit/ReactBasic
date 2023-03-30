@@ -40,7 +40,7 @@ function Transaction(props) {
       <Giftme title='Salary' amount='25000'/>
       <Giftme title='Travel' amount='1000'/>  */}
       </ul>
-      {/* useComsumer */}
+      {/* useConsumer */}
       {/* <DataContext.Consumer>{(value) => <p>{value}</p>}</DataContext.Consumer> */}
 
       {/* useContext
