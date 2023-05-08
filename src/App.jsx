@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Transaction from "./components/Transaction";
@@ -17,8 +17,20 @@ function App() {
   //   { id: 4, title: 'Insurance', amount: 4000 },
   // ]
 
+  // day 9 Data
+  // const initState = [
+  //   { id: 1, title: "home spend", amount: -2000 },
+  //   { id: 2, title: "Saraly", amount: 12000 },
+  //   { id: 3, title: "Travel", amount: -500 },
+  //   { id: 4, title: "home spend", amount: 2000 },
+  // ];
+
   // useState for array initData ** use [] for init good
   const [items, setItem] = useState([]);
+
+  const [reportIncome, setReportIncome] = useState(0);
+  const [reportExpense, setReportExpense] = useState(0);
+
   // get Data from formComps
   const onAddNewItem = (newItem) => {
     setItem((prevItem) => {
@@ -26,11 +38,25 @@ function App() {
     });
   };
 
+  // how to filter and sumary
+  useEffect(() => {
+    const amounts = items.map((items) => items.amount);
+    const income = amounts
+      .filter((element) => element > 0)
+      .reduce((total, element) => (total += element), 0);
+    const expens =
+      amounts.filter((element) => element < 0).reduce((total, element) => (total += element), 0) *
+      -1;
+
+    setReportIncome(income);
+    setReportExpense(expens);
+  }, [items, reportIncome, reportExpense]);
+
   return (
     <DataContext.Provider
       value={{
-        income: 50000,
-        expense: -8000,
+        income: reportIncome,
+        expense: reportExpense,
       }}
     >
       <div>

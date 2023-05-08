@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Sriracha&display=swap');
 
-*{
+* {
   box-sizing: border-box;
   font-family: 'Prompt', sans-serif;
 }
 
-body{
-  background: #0077ff;
+body {
+  background: #88bcf8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,12 +14,13 @@ body{
   min-height: 100vh;
   margin: 0;
 }
-.container{
+
+.container {
   margin: 30px auto;
   width: 350px;
 }
 
-.horizontal-menu{
+.horizontal-menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -27,10 +28,12 @@ body{
   background: #333;
   text-align: center;
 }
-.horizontal-menu li{
+
+.horizontal-menu li {
   display: inline-block;
 }
-.horizontal-menu a{
+
+.horizontal-menu a {
   color: white;
   text-decoration: none;
   padding: 16px;
@@ -99,6 +102,3 @@ h1 {
 .read-the-docs {
   color: #888;
 } */
-
-
-
