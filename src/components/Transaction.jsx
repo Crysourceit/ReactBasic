@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import Giftme from "./Giftme";
 import { BrowserRouter } from "react-router-dom";
 import "./Transaction.css";
 import { element } from "prop-types";
-import DataContext from "../Data/DataContext";
 
 function Transaction(props) {
   const { items } = props;
-  const { income, expense } = useContext(DataContext);
+  // const { income, expense } = useContext(DataContext);
   // const nameconx = useContext(DataContext);
   // const data = [
   //   { title: 'Price', amount: 2000 },
@@ -44,9 +43,9 @@ function Transaction(props) {
       {/* <DataContext.Consumer>{(value) => <p>{value}</p>}</DataContext.Consumer> */}
 
       {/* useContext
-      {nameconx} */}
+      {nameconx}
       <p>rayrub : {income}</p>
-      <p>rayjai : {expense}</p>
+      <p>rayjai : {expense}</p> */}
     </div>
   );
 }
