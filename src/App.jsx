@@ -18,15 +18,15 @@ function App() {
   // ]
 
   // day 9 Data
-  // const initState = [
-  //   { id: 1, title: "home spend", amount: -2000 },
-  //   { id: 2, title: "Saraly", amount: 12000 },
-  //   { id: 3, title: "Travel", amount: -500 },
-  //   { id: 4, title: "home spend", amount: 2000 },
-  // ];
+  const initState = [
+    { id: 1, title: "home spend", amount: -2000 },
+    { id: 2, title: "Saraly", amount: 12000 },
+    { id: 3, title: "Travel", amount: -500 },
+    { id: 4, title: "home spend", amount: 2000 },
+  ];
 
   // useState for array initData ** use [] for init good
-  const [items, setItem] = useState([]);
+  const [items, setItem] = useState(initState);
 
   const [reportIncome, setReportIncome] = useState(0);
   const [reportExpense, setReportExpense] = useState(0);
