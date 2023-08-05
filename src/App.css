@@ -27,6 +27,8 @@ body {
   overflow: hidden;
   background: #333;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .horizontal-menu li {
@@ -41,7 +43,7 @@ body {
 }
 
 h1 {
-  color: #ea8807;
+  color: #ea0707;
 }
 
 .logo {

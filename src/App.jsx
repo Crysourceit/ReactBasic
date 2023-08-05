@@ -1,31 +1,13 @@
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Transaction from "./components/Transaction";
 import FormComponents from "./components/FormComponents";
 import DataContext from "./Data/DataContext";
 import ReportComponent from "./components/ReportComponent";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  //btn counter
-  // const [count, setCount] = useState(0);
-
-  // raw Data
-  //   { id: 1, title: 'Price', amount: 2000 },
-  //   { id: 2, title: 'Salary', amount: 25000 },
-  //   { id: 3, title: 'Travel', amount: 1000 },
-  //   { id: 4, title: 'Insurance', amount: 4000 },
-  // ]
-
-  // // day 9 Data
-  // const initState = [
-  //   { id: 1, title: "home spend", amount: -2000 },
-  //   { id: 2, title: "Saraly", amount: 12000 },
-  //   { id: 3, title: "Travel", amount: -500 },
-  //   { id: 4, title: "home spend", amount: 2000 },
-  // ];
-
-  // useState for array initData ** use [] for init good
   const [items, setItem] = useState([]);
 
   const [reportIncome, setReportIncome] = useState(0);
@@ -48,35 +30,9 @@ function App() {
       amounts.filter((element) => element < 0).reduce((total, element) => (total += element), 0) *
       -1;
 
-    setReportIncome(income);
-    setReportExpense(expens);
+    setReportIncome(income.toFixed(2));
+    setReportExpense(expens.toFixed(2));
   }, [items, reportIncome, reportExpense]);
-
-  // // reducer state
-  // const [count, setCount] = useState(0);
-  // const reducer = (state, action) => {
-  //   switch (action.type) {
-  //     case "ADD":
-  //       return state + action.payload;
-  //     case "SUB":
-  //       return state - action.payload;
-  //     case "CLEAR":
-  //       return 0;
-  //   }
-  // };
-  // const [result, dispatch] = useReducer(reducer, count);
-
-  // reducer state ShowReport
-  const [showReport, setShowReport] = useState(false);
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "SHOW":
-        return setShowReport(true);
-      case "HIDE":
-        return setShowReport(false);
-    }
-  };
-  const [result, dispatch] = useReducer(reducer, showReport);
 
   return (
     <DataContext.Provider
@@ -100,22 +56,31 @@ function App() {
         </div>
 
         <h1>Vite + React For First Time</h1>
-        {showReport && <ReportComponent />}
-        <FormComponents onAddItem={onAddNewItem} />
-        <Transaction items={items} />
+
+        <Router>
+          <div>
+            <ul className="horizontal-menu">
+              <li>
+                <Link to="/">Data Account</Link>
+              </li>
+              <li>
+                <Link to="/insert">Save</Link>
+              </li>
+            </ul>
+            <Routes>
+              <Route path="/" element={<ReportComponent />}></Route>
+              <Route
+                path="/insert"
+                element={
+                  <>
+                    <FormComponents onAddItem={onAddNewItem} /> <Transaction items={items} />{" "}
+                  </>
+                }
+              ></Route>
+            </Routes>
+          </div>
+        </Router>
       </div>
-
-      {/* This is Example for Reducer
-      <div align="center">
-        <h1>{result}</h1>
-        <button onClick={() => dispatch({ type: "ADD", payload: 10 })}>increase</button>
-        <button onClick={() => dispatch({ type: "SUB", payload: 5 })}>decrease</button>
-        <button onClick={() => dispatch({ type: "CLEAR" })}>clear</button>
-      </div> */}
-
-      {/* This is show and hide by use Reducer */}
-      <button onClick={() => dispatch({ type: "SHOW" })}>Show</button>
-      <button onClick={() => dispatch({ type: "HIDE" })}>Hide</button>
     </DataContext.Provider>
   );
 }

@@ -11,9 +11,11 @@ const FormComponents = (props) => {
   const inputTitle = (event) => {
     setTitle(event.target.value);
   };
+
   const inputAmount = (event) => {
     setAmount(event.target.value);
   };
+
   const saveItem = (event) => {
     event.preventDefault(); // no refresh
     const itemData = {

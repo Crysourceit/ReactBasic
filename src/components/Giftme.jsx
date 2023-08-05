@@ -9,6 +9,10 @@ const Giftme = (props) => {
   const symbol = amount < 0 ? "-" : "+";
   // const namecony = useContext(DataContext);
 
+  const formatNumber = (num) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  };
+
   return (
     <div>
       <li className={status}>
@@ -16,7 +20,7 @@ const Giftme = (props) => {
         {title}{" "}
         <span>
           {symbol}
-          {Math.abs(amount)}
+          {formatNumber(Math.abs(amount))}
         </span>
         {/* useConsumer
         <DataContext.Consumer>{(value) => <p>{value}</p>}</DataContext.Consumer> */}
